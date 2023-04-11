@@ -22,7 +22,7 @@ export class AuthController{
                     .post(`${this.API}/cadastro`, account).pipe());
     }
 
-    async login(account: Account): Promise<LoginDTO> {
+    async login(account: Account): Promise<any> {
 
         return await firstValueFrom(
             this.http.post<LoginDTO>(`${this.API}/login`, account));

@@ -11,7 +11,6 @@ import { SharedModule } from "src/app/shared/shared.module";
         CommonModule,
         DashboardRoutingModule,
         SharedModule
-
     ],
 })
 export class DashboardModule {}

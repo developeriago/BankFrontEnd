@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { JwtInterceptor } from '../core/security/jwt.interceptor';
 
 
 
@@ -27,9 +28,14 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatToolbarModule,
     MatSelectModule
-
-
   ],
+  providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: JwtInterceptor,
+        multi: true
+    }
+  ]
 
 })
 export class SharedModule { }

@@ -20,6 +20,11 @@ export class Transacao{
                     .post(`${this.API}/depositar`, operacao).pipe());
     }
 
+    extratoList(cpf: string): Promise<Operacao[]>{
+        return firstValueFrom(
+            this.http
+            .get<Operacao[]>(`${this.API}/extrato/${cpf}`));
+    }
 
 
 }
