@@ -23,7 +23,7 @@ export class AccountComponent {
         this.form = this.formBuilder.group({
             cpf: [''],
             valor: [''],
-            operacao: [''],
+            operacao: ['Depósito'],
         });
     }
 

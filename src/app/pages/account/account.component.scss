@@ -14,3 +14,10 @@ mat-card{
     width: 100%;
     min-width: 150px;
   }
+
+  .invisible{
+    display: block;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
