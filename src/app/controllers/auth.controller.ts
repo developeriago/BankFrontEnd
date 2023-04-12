@@ -11,7 +11,6 @@ import { LoginDTO } from '../dtos/login.dto';
 })
 export class AuthController{
 
-    //private api: string = environment.api;
     private readonly API = 'api'
 
     constructor( private http: HttpClient){}

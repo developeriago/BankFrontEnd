@@ -6,8 +6,8 @@ import { Observable } from "rxjs";
 export class JwtInterceptor implements HttpInterceptor{
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
         const storedUser = localStorage.getItem('account')
-        console.log('Request Auth')
 
         if(storedUser) {
             const loggedUser = JSON.parse(storedUser)

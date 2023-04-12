@@ -38,6 +38,7 @@ export class SinginComponent {
             localStorage.setItem('token', response.token);
             localStorage.setItem('account', JSON.stringify(response));
             localStorage.setItem('cpf', response.cpf);
+            localStorage.setItem('nome', response.nome);
 
             this.router.navigate(['/dashboard']);
 

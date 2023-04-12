@@ -1,16 +1,17 @@
-import { Transacao } from '../../controllers/transacao.controller';
-import { Operacao } from '../../models/Operacao';
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Transacao } from 'src/app/controllers/transacao.controller';
+import { Operacao } from 'src/app/models/Operacao';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss']
+  selector: 'app-deposito',
+  templateUrl: './deposito.component.html',
+  styleUrls: ['./deposito.component.scss']
 })
-export class AccountComponent {
+export class DepositoComponent {
 
     form: FormGroup;
 
@@ -46,4 +47,5 @@ export class AccountComponent {
             this.toast.toast('Não foi possível realizar o depósito!');
         }
     }
+
 }

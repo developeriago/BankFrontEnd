@@ -13,13 +13,13 @@ export class Transacao{
 
     constructor( private http: HttpClient){}
 
-    async deposito(operacao: Operacao): Promise<any> {
+    async deposito(operacao: Operacao): Promise<Operacao> {
         return await firstValueFrom(
                     this.http
                     .post(`${this.API}/depositar`, operacao).pipe());
     }
 
-    async saque(operacao: Operacao): Promise<any> {
+    async saque(operacao: Operacao): Promise<Operacao> {
         return await firstValueFrom(
                     this.http
                     .post(`${this.API}/saque`, operacao).pipe());
