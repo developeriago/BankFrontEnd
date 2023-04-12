@@ -37,13 +37,12 @@ export class SinginComponent {
 
             localStorage.setItem('token', response.token);
             localStorage.setItem('account', JSON.stringify(response));
-            localStorage.setItem('cpf', response.cpf)
+            localStorage.setItem('cpf', response.cpf);
 
             this.router.navigate(['/dashboard']);
 
         } catch (error: any) {
 
-            // this.toast.toast('Ocorreu um erro!');
             this.toast.toast(error.error, true);
         }
     }

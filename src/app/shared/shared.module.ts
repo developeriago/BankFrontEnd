@@ -27,7 +27,7 @@ import { JwtInterceptor } from '../core/security/jwt.interceptor';
     MatIconModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [
     {
