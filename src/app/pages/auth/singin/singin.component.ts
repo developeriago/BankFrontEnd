@@ -28,6 +28,8 @@ export class SinginComponent {
 
      async login(){
 
+        localStorage.clear()
+
         try {
             let response = await this.authController.login(
                 <Account>this.form.value
@@ -37,12 +39,12 @@ export class SinginComponent {
             localStorage.setItem('account', JSON.stringify(response));
             localStorage.setItem('cpf', response.cpf)
 
-            console.log(response);
             this.router.navigate(['/dashboard']);
 
         } catch (error: any) {
-            this.toast.toast('Ocorreu um erro!');
-            //this.toast.toast(error.error.message, true);
+
+            // this.toast.toast('Ocorreu um erro!');
+            this.toast.toast(error.error, true);
         }
     }
 }

@@ -9,7 +9,6 @@ import { Operacao } from '../models/Operacao';
 })
 export class Transacao{
 
-    //private api: string = environment.api;
     private readonly API = 'api'
 
     constructor( private http: HttpClient){}
@@ -20,11 +19,22 @@ export class Transacao{
                     .post(`${this.API}/depositar`, operacao).pipe());
     }
 
-    extratoList(cpf: string): Promise<Operacao[]>{
+    async saque(operacao: Operacao): Promise<any> {
+        return await firstValueFrom(
+                    this.http
+                    .post(`${this.API}/saque`, operacao).pipe());
+    }
+
+    async extratoList(cpf: string): Promise<Operacao[]>{
         return firstValueFrom(
             this.http
             .get<Operacao[]>(`${this.API}/extrato/${cpf}`));
     }
 
+    async saldo(cpf: string): Promise<any>{
+        return firstValueFrom(
+            this.http.get<any>(`${this.API}/saldo/${cpf}`));
+
+    }
 
 }

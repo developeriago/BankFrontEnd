@@ -5,7 +5,7 @@
 
 <aside class="sidebar">
     <div class="menu">
-        <a href="" class="brand h-16 mt-3">
+        <a class="brand h-16 mt-3">
             <img src="https://rafasgeek.com.br/wp-content/uploads/2021/08/Business-bank-account-e1534519443766.jpeg.optimal.jpeg" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
             <span class="brand-name">Tivic Bank</span>
         </a>
@@ -17,20 +17,20 @@
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/conta-bancaria']" class="side-link">
+                <a [routerLink]="['/conta-bancaria/deposito']" class="side-link">
                     <i class="ri-bank-fill"></i>
                     <span class="side-name">Depositar</span>
                 </a>
             </li>
 
             <li>
-                <a [routerLink]="['/login']" class="side-link">
+                <a [routerLink]="['/conta-bancaria/saque']" class="side-link">
                     <i class="ri-login-box-line"></i>
                     <span class="side-name">Saque</span>
                 </a>
             </li>
             <li>
-                <a [routerLink]="['/login/cadastrar']" class="side-link">
+                <a [routerLink]="['/login']" class="side-link">
                     <i class="ri-logout-box-r-line"></i>
                     <span class="side-name">Sair</span>
                 </a>

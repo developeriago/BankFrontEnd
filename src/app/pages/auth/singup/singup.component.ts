@@ -38,7 +38,7 @@ export class SingupComponent {
             this.router.navigate(['/login']);
 
         } catch (error: any) {
-            this.toast.toast(error.error.message, true);
+            this.toast.toast(error.error, true);
             this.toast.toast('Usuário ja cadastrado!');
         }
     }

@@ -9,7 +9,7 @@ const routes: Routes = [
         pathMatch: "full",
     },
     {
-        path: "login",
+        path: "",
         loadChildren: () => import("./pages/auth/auth.module").then((module) => module.AuthModule),
     },
     {
@@ -22,6 +22,7 @@ const routes: Routes = [
         loadChildren: () => import("./pages/account/account.module").then((module) => module.AccountModule),
         component: SidebarComponent,
     },
+
 ];
 
 @NgModule({

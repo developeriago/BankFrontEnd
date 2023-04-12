@@ -25,7 +25,7 @@ export class AuthController{
     async login(account: Account): Promise<any> {
 
         return await firstValueFrom(
-            this.http.post<LoginDTO>(`${this.API}/login`, account));
+            this.http.post<any>(`${this.API}/login`, account));
     }
 
 }
