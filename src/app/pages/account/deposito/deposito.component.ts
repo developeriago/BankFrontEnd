@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Transacao } from 'src/app/controllers/transacao.controller';
 import { Operacao } from 'src/app/models/Operacao';
@@ -26,7 +26,7 @@ export class DepositoComponent {
 
         this.form = this.formBuilder.group({
             cpf: [cpf],
-            valor: [''],
+            valor: ['', Validators.required],
             operacao: ['Depósito'],
         });
     }
@@ -48,6 +48,18 @@ export class DepositoComponent {
             this.toast.toast(error.error, true);
             this.toast.toast('Não foi possível realizar o depósito!');
         }
+    }
+
+    getErrorMessage(fieldValor: string){
+
+        const field = this.form.get(fieldValor);
+
+        if(field?.hasError('required')){
+            return 'Campo obrigatório'
+        }
+
+        return 'Campo inválido';
+
     }
 
 }

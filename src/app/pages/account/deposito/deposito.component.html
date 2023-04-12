@@ -8,6 +8,7 @@
             <mat-form-field class="full-width" appearance="fill" floatLabel="always">
                 <mat-label>Valor</mat-label>
                 <input matInput formControlName="valor" type="number" class="example-right-align" placeholder="0">
+                <mat-error *ngIf="form.get('valor')?.invalid">{{getErrorMessage('valor')}}</mat-error>
             </mat-form-field>
 
         </form>

@@ -12,15 +12,28 @@
                                         <h1>Bem Vindo ao TivicBank!</h1>
                                     </div>
                                     <form class="user needs-validation" novalidate [formGroup]="form">
+
+
                                         <div class="form-group">
-                                            <i class="material-icons">person</i>
-                                            <input type="email" class="form-control form-control-user"
-                                                formControlName="cpf" required placeholder="CPF">
+                                            <mat-form-field [style.width.px]=350 appearance="outline">
+
+                                                <mat-label>CPF</mat-label>
+                                                <input matInput placeholder="000.000.000.00" formControlName="cpf">
+                                                <mat-error *ngIf="form.get('cpf')?.invalid">{{getErrorMessage('cpf')}}</mat-error>
+                                                <mat-icon matSuffix>fingerprint</mat-icon>
+
+                                            </mat-form-field>
                                         </div>
+
                                         <div class="form-group">
-                                            <i class="material-icons">lock</i>
-                                            <input type="password" class="form-control form-control-user"
-                                                formControlName="senha" required="true" placeholder="Senha">
+                                            <mat-form-field [style.width.px]=350 appearance="outline">
+
+                                                <mat-label>Senha</mat-label>
+                                                <input type="password" matInput placeholder=".........." formControlName="senha">
+                                                <mat-error *ngIf="form.get('senha')?.invalid">{{getErrorMessage('senha')}}</mat-error>
+                                                <mat-icon matSuffix>lock</mat-icon>
+
+                                            </mat-form-field>
                                         </div>
 
                                         <button type="submit" (click)="login()"

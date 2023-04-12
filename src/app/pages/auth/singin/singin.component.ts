@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthController } from 'src/app/controllers/auth.controller'
 import { Account } from "src/app/models/Account";
@@ -23,12 +23,12 @@ export class SinginComponent {
         ){
 
         this.form = this.formBuilder.group({
-            cpf: [''],
-            senha: [''],
+            cpf: ['', Validators.required,],
+            senha: ['', Validators.required],
         });
     }
 
-     async login(){
+    async login(){
 
         localStorage.clear()
 
@@ -48,6 +48,19 @@ export class SinginComponent {
 
             this.toast.toast(error.error, true);
         }
+    }
+
+    getErrorMessage(fieldname: string){
+
+        const campoCpf = this.form.get(fieldname);
+
+        if(campoCpf?.hasError('required')){
+            return 'Campo obrigatório'
+        }
+
+
+        return 'Campo inválido';
+
     }
 }
 

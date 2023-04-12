@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from "@angular/core";
 import { Account } from 'src/app/models/Account';
 import { AuthController } from 'src/app/controllers/auth.controller'
@@ -22,9 +22,9 @@ export class SingupComponent {
         ){
 
         this.form = this.formBuilder.group({
-            nome: [''],
-            cpf: [''],
-            senha: [''],
+            nome: ['', Validators.required],
+            cpf: ['', Validators.required],
+            senha: ['', Validators.required],
         });
     }
 
@@ -43,4 +43,19 @@ export class SingupComponent {
             this.toast.toast('Usuário ja cadastrado!');
         }
     }
+
+    getErrorMessage(fieldname: string){
+
+        const campoCpf = this.form.get(fieldname);
+
+        if(campoCpf?.hasError('required')){
+            return 'Campo obrigatório'
+        }
+
+
+        return 'Campo inválido';
+
+    }
+
+
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Transacao } from 'src/app/controllers/transacao.controller';
 import { Operacao } from 'src/app/models/Operacao';
@@ -24,7 +24,7 @@ export class SaqueComponent {
         let cpf: string = localStorage.getItem('cpf')!;
         this.form = this.formBuilder.group({
             cpf: [cpf],
-            valor: [''],
+            valor: ['', Validators.required],
             operacao: ['Saque'],
         });
     }
@@ -45,6 +45,19 @@ export class SaqueComponent {
 
             this.toast.toast(error.error, true);
         }
+    }
+
+    getErrorMessage(fieldname: string){
+
+        const campoCpf = this.form.get(fieldname);
+
+        if(campoCpf?.hasError('required')){
+            return 'Campo obrigatório'
+        }
+
+
+        return 'Campo inválido';
+
     }
 
 }
