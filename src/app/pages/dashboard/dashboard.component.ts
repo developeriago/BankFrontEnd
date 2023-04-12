@@ -14,9 +14,7 @@ export class DashboardComponent implements OnInit {
     displayedColumns = ['operacao', 'cpf', 'valor'];
     public saldo = null;
 
-    constructor( private transacaoController: Transacao){
-
-    }
+    constructor( private transacaoController: Transacao){}
 
     ngOnInit(): void {
 

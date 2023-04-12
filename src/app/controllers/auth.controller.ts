@@ -2,9 +2,7 @@ import { firstValueFrom } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from 'src/environments/environment';
 import { Account } from '../models/Account';
-import { LoginDTO } from '../dtos/login.dto';
 
 @Injectable({
     providedIn: "root"

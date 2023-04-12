@@ -10,7 +10,7 @@ export class UtilsService {
     async toast(
         message: string,
         isError: boolean = false,
-        duration: number = 3000
+        duration: number = 4000
     ): Promise<void> {
         this.snackBar.open(message, 'x', {
             duration: duration,

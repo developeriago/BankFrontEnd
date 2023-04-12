@@ -11,6 +11,7 @@ import { UtilsService } from 'src/app/utils/utils.service';
     styleUrls: ["./singin.component.scss"],
 })
 export class SinginComponent {
+
     form: FormGroup;
 
     constructor(
@@ -20,6 +21,7 @@ export class SinginComponent {
         private toast: UtilsService,
 
         ){
+
         this.form = this.formBuilder.group({
             cpf: [''],
             senha: [''],

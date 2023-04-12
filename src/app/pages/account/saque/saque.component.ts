@@ -42,6 +42,7 @@ export class SaqueComponent {
             this.router.navigate(['/dashboard']);
 
         } catch (error: any) {
+
             this.toast.toast(error.error, true);
         }
     }

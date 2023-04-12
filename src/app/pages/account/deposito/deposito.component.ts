@@ -23,6 +23,7 @@ export class DepositoComponent {
         ){
 
         let cpf: string = localStorage.getItem('cpf')!;
+
         this.form = this.formBuilder.group({
             cpf: [cpf],
             valor: [''],
@@ -43,6 +44,7 @@ export class DepositoComponent {
             this.router.navigate(['/dashboard']);
 
         } catch (error: any) {
+
             this.toast.toast(error.error, true);
             this.toast.toast('Não foi possível realizar o depósito!');
         }

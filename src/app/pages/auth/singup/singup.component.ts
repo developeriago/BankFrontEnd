@@ -20,6 +20,7 @@ export class SingupComponent {
         private toast: UtilsService,
         private authController: AuthController
         ){
+
         this.form = this.formBuilder.group({
             nome: [''],
             cpf: [''],
